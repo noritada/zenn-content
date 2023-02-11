@@ -1,0 +1,9 @@
+{
+  "name": "zenn-content",
+  "description": "https://zenn.dev/noritada",
+  "author": "Noritada Kobayashi <noritada.kobayashi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "zenn-cli": "^0.1.137"
+  }
+}
