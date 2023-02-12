@@ -3,7 +3,7 @@ title: "ecCodesに入ったGRIB2 Template 5.200/7.200サポートを用いてpyg
 emoji: "🛰️"
 type: "tech"
 topics: ["気象データ", "GRIB", "GRIB2", "ecCodes", "pygrib"]
-published: false
+published: true
 ---
 
 この記事では、ecCodesの開発最新版に入ったGRIB2 Template 5.200/7.200サポートを用いて、これまで簡単には読めなかった気象庁全国合成レーダーGPVをpygribで読んでみます。結論としては、Template 5.200のレベル値の扱いが少し気になるものの、それ以外は気持ちよく使えることがわかりました。
