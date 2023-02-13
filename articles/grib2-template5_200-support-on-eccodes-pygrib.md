@@ -31,9 +31,9 @@ GRIBデータは `b"GRIB"` で始まり `b"7777"` で終わるメッセージか
 - **Section 3 (Grid Definition Section)**
   格子系の定義。格子系の種類（正距円筒図法やランベルト正角円錐図法など）と、それぞれの格子系を具体的に定義するパラメータ群（四隅の経緯度、緯度方向や経度方向の格子点数など）。種類ごとにTemplateが存在。
 - **Section 4 (Product Definition Section)**
-  含まれる値の意味に関する定義。例えば前述の気象要素、高度レベル、予報時間など。さまざまなパターンを網羅できるよう、Templateが存在。
+  含まれる値の意味に関する定義。例えば前述の気象要素、高度レベル、予報時間など。さまざまなパターンを網羅できるよう、Templateが存在。気象要素についてはテーブルでコードが（単位と一緒に）定義されており、そのコードで表現される。
 - **Section 5 (Data Representaion Section)**
-  格子点値をどのような表現として含むかに関する定義。簡単に言えば、圧縮方法や、その方法での圧縮に使われるパラメータ群の値の定義。圧縮方法ごとにTemplateが存在。
+  格子点値をどのような表現として含むかに関する定義。簡単に言えば、圧縮方法や、その方法での圧縮に使われるパラメータ群の値の定義。必要となるパラメータ群は圧縮方法ごとに異なるので、圧縮方法ごとのTemplateが存在。
 - **Section 6 (Bit-map Section)**
   配列中の一連の欠損値を表すビットマップ。各格子点値が欠損値であるかどうかの情報を格子点値の配列から切り離してこのセクションに格納し、欠損値以外の格子点値のみをSection 5で定義した方法で圧縮してSection 7に格納する、という使い方をする。
 - **Section 7 (Data Section)**
@@ -70,17 +70,17 @@ https://github.com/ecmwf/eccodes/pull/72
 
 https://github.com/ecmwf/eccodes/commit/b5732d2b7133a624e8e78f16e99efd22550bd626
 
-Homebrewなど一部のパッケージングシステムではリリース版がバイナリパッケージとして配布されているのですが、このTemplate 5.200/7.200サポートは入ったばかりで本記事執筆時点ではまだリリースされていませんので、開発最新版を用いて動作を確認してみましょう。
-
 # ecCodes でデータを読む
 
 まずは ecCodes で、Template 5.200/7.200 でエンコードされたデータにアクセスしてみます。
+
+Homebrewなど一部のパッケージングシステムではリリース版がバイナリパッケージとして配布されているのですが、このTemplate 5.200/7.200サポートは入ったばかりで本記事執筆時点ではまだリリースされていませんので、開発最新版を用いて動作を確認してみましょう。
 
 ## 環境準備
 
 ecCodes はシステムにもインストールされているので、それとは別に、今回の作業専用のディレクトリに開発版をインストールします。
 
-以下のようなディレクトリ構成を前提とします（`${WORK_DIR}` が作業用ディレクトリです）。
+以下のようなディレクトリ構成を前提とします（`${WORK_DIR}` が作業用ディレクトリです）。なお、説明は、筆者の使用する macOS 環境を用いたものとなっていますが、インストール後の使い方は OS によって大きく変わらないはずです。
 
 - `${WORK_DIR}/build`
   ecCodesのビルド用ディレクトリ（書き込みあり）。
@@ -557,7 +557,7 @@ array([[0., 0., 0., ..., 0., 0., 0.],
 
 # おまけ：pygribをインストールして実行するとシステムのecCodesを参照してしまう問題
 
-`ECCODES_DIR=../install poetry run python setup.py install` として、`${WORK_DIR}/install` 内の ecCodes を指定してビルド、インストールしたにも関わらず、インストールして実行するとシステムの ecCodes を参照してしまう問題が発生しました。次のように、インストールされた pygrib の .so から libeccodes.dylib への参照が `@rpath` になっているのが原因です。
+`ECCODES_DIR=../install poetry run python setup.py install` として、`${WORK_DIR}/install` 内の ecCodes を指定してビルド、インストールしたにも関わらず、インストールして実行するとシステムの ecCodes を参照してしまう問題が発生しました。次のように、筆者の用いている macOS 環境においてビルドすると、インストールされた pygrib の .so から libeccodes.dylib への参照が `@rpath` になってしまうのが原因です。
 
 ```shellsession
 % otool -L ~/Library/Caches/pypoetry/virtualenvs/eccodes-template5-200-pygrib-XxMU_syS-py3.10/lib/python3.10/site-packages/pygrib-2.1.4-py3.10-macosx-10.15-x86_64.egg/pygrib/_pygrib.cpython-310-darwin.so
@@ -569,7 +569,7 @@ array([[0., 0., 0., ..., 0., 0., 0.],
 次のように、リンクを `${WORKDIR}/install/lib/libeccodes.dylib` への参照に置き換えてあげることで解決しました。
 
 ```shellsession
-% install_name_tool -change @rpath/libeccodes.dylib ~/work/lab/eccodes-template5_200-pygrib/install/lib/libeccodes.dylib src/pygrib/_pygrib.cpython-310-darwin.so
+% install_name_tool -change @rpath/libeccodes.dylib ${WORKDIR}/install/lib/libeccodes.dylib src/pygrib/_pygrib.cpython-310-darwin.so
 ```
 
 # 参考文献
