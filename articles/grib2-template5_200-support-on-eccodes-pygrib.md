@@ -6,7 +6,7 @@ topics: ["気象データ", "GRIB", "GRIB2", "ecCodes", "pygrib"]
 published: true
 ---
 
-この記事では、ecCodesの開発最新版に入ったGRIB2 Template 5.200/7.200サポートを用いて、これまで簡単には読めなかった気象庁全国合成レーダーGPVをpygribで読んでみます。結論としては、Template 5.200のレベル値が `0` のケースの扱いが少し気になるものの、それ以外は気持ちよく使えることがわかりました。
+この記事では、ecCodesの開発最新版に入ったGRIB2 Template 5.200/7.200サポートを用いて、これまで簡単には読めなかった気象庁全国合成レーダーGPVをpygribで読んでみます。結論としては、気象庁定義のTemplate 4.50008の設定を自分で追加してあげる必要があります。また、Template 5.200のレベル値が `0` のケースの扱いも少し気になります。しかし、それ以外は気持ちよく使えることがわかりました。
 
 # はじめに：用語とか概念とか
 
@@ -250,6 +250,89 @@ install/share/eccodes/definitions/grib2/template.5.200.def
 ```
 
 また、デコードで得られた配列が（冒頭部分のみ）Section 7 に表示されており、デコードできていそうだというのもわかります。
+
+なお、このTemplate 5.200/7.200サポートが入るまでは、以下のようにTemplate 5.200のダンプ以降がエラーになっていました。
+
+```shellsession
+% grib_dump -O -w count=1 ${TNOWC_PATH}
+***** FILE: Z__C_RJTD_20160822020000_NOWC_GPV_Ggis10km_Pphw10_FH0000-0100_grib2.bin 
+ECCODES ERROR   :  Unable to find template dataRepresentation from grib2/template.5.200.def 
+ECCODES ERROR   :  grib_handle_new_from_message: No final 7777 in message!
+#==============   MESSAGE 1 ( length=1567 )                ==============
+1-4       identifier = GRIB
+5-6       reserved = MISSING
+7         discipline = 0 [Meteorological products (grib2/tables/5/0.0.table) ]
+8         editionNumber = 2
+9-16      totalLength = 1567
+======================   SECTION_1 ( length=21, padding=0 )    ======================
+1-4       section1Length = 21
+5         numberOfSection = 1
+6-7       centre = 34 [Japanese Meteorological Agency - Tokyo (RSMC)  (common/c-11.table) ]
+8-9       subCentre = 0
+10        tablesVersion = 5 [Version implemented on 4 November 2009 (grib2/tables/1.0.table) ]
+11        localTablesVersion = 1 [Unknown code table entry () ]
+12        significanceOfReferenceTime = 0 [Analysis (grib2/tables/5/1.2.table) ]
+13-14     year = 2016
+15        month = 8
+16        day = 22
+17        hour = 2
+18        minute = 0
+19        second = 0
+20        productionStatusOfProcessedData = 0 [Operational products (grib2/tables/5/1.3.table) ]
+21        typeOfProcessedData = 2 [Analysis and forecast products (grib2/tables/5/1.4.table) ]
+======================   SECTION_3 ( length=72, padding=0 )    ======================
+1-4       section3Length = 72
+5         numberOfSection = 3
+6         sourceOfGridDefinition = 0 [Specified in Code table 3.1 (grib2/tables/5/3.0.table) ]
+7-10      numberOfDataPoints = 86016
+11        numberOfOctectsForNumberOfPoints = 0
+12        interpretationOfNumberOfPoints = 0 [There is no appended list (grib2/tables/5/3.11.table) ]
+13-14     gridDefinitionTemplateNumber = 0 [Latitude/longitude (Also called equidistant cylindrical, or Plate Carree)  (grib2/tables/5/3.1.table) ]
+15        shapeOfTheEarth = 4 [Earth assumed oblate spheroid as defined in IAG-GRS80 model (major axis = 6,378,137.0 m, minor axis = 6,356,752.314 m, f = 1/298.257222101)  (grib2/tables/5/3.2.table) ]
+16        scaleFactorOfRadiusOfSphericalEarth = MISSING
+17-20     scaledValueOfRadiusOfSphericalEarth = MISSING
+21        scaleFactorOfEarthMajorAxis = 1
+22-25     scaledValueOfEarthMajorAxis = 63781370
+26        scaleFactorOfEarthMinorAxis = 1
+27-30     scaledValueOfEarthMinorAxis = 63567523
+31-34     Ni = 256
+35-38     Nj = 336
+39-42     basicAngleOfTheInitialProductionDomain = 0
+43-46     subdivisionsOfBasicAngle = MISSING
+47-50     latitudeOfFirstGridPoint = 47958333
+51-54     longitudeOfFirstGridPoint = 118062500
+55        resolutionAndComponentFlags = 48 [00110000 (grib2/tables/5/3.3.table) ]
+56-59     latitudeOfLastGridPoint = 20041667
+60-63     longitudeOfLastGridPoint = 149937500
+64-67     iDirectionIncrement = 125000
+68-71     jDirectionIncrement = 83333
+72        scanningMode = 0 [00000000 (grib2/tables/5/3.4.table) ]
+======================   SECTION_4 ( length=34, padding=0 )    ======================
+1-4       section4Length = 34
+5         numberOfSection = 4
+6-7       NV = 0
+8-9       productDefinitionTemplateNumber = 0 [Analysis or forecast at a horizontal level or in a horizontal layer at a point in time (grib2/tables/5/4.0.table) ]
+10        parameterCategory = 193 [Unknown code table entry (grib2/tables/5/4.1.0.table) ]
+11        parameterNumber = 0 [Unknown code table entry () ]
+12        typeOfGeneratingProcess = 0 [Analysis (grib2/tables/5/4.3.table) ]
+13        backgroundProcess = 153
+14        generatingProcessIdentifier = 255
+15-16     hoursAfterDataCutoff = 0
+17        minutesAfterDataCutoff = 0
+18        indicatorOfUnitOfTimeRange = 0 [Minute (grib2/tables/5/4.4.table) ]
+19-22     forecastTime = 0
+23        typeOfFirstFixedSurface = 1 [Ground or water surface (grib2/tables/5/4.5.table) ]
+24        scaleFactorOfFirstFixedSurface = MISSING
+25-28     scaledValueOfFirstFixedSurface = MISSING
+29        typeOfSecondFixedSurface = 255 [Missing (grib2/tables/5/4.5.table) ]
+30        scaleFactorOfSecondFixedSurface = MISSING
+31-34     scaledValueOfSecondFixedSurface = MISSING
+======================   SECTION_5 ( length=23, padding=12 )   ======================
+1-4       section5Length = 23
+5         numberOfSection = 5
+6-9       numberOfValues = 86016
+10-11     dataRepresentationTemplateNumber = 200 [Unknown code table entry (grib2/tables/5/5.0.table) ]
+```
 
 ## デコードで得られた値の確認
 
@@ -553,7 +636,7 @@ array([[0., 0., 0., ..., 0., 0., 0.],
              1]))
 ```
 
-無事にデータにアクセスでき、このGPVに含まれる降水強度の格子点値のうち、最も強いのは 51.5 mm/h（1格子点）、次が50.5 mm/h（2格子点）であることがわかりました。
+無事にデータにアクセスでき、このGPVに含まれる降水強度の格子点値のうち、最も強いのは 51.5 mm/h（1格子点）、次が50.5 mm/h（2格子点）であることがわかりました^[なお、51.5 mm/hや50.5 mm/hのような中途半端な値になっているのは、代表値という特性によるものです。前述の技術情報第162号のレベル値の表を見るとわかるはずですが、「51.5 mm/h」は「51.0 mm/h以上52.0 mm/h未満」の意味であり、「50.5 mm/h」は「50.0 mm/h以上51.0 mm/h未満」の意味です。]。
 
 # おまけ：pygribをインストールして実行するとシステムのecCodesを参照してしまう問題
 
