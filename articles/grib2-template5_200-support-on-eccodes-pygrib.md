@@ -126,7 +126,7 @@ install/share/eccodes/definitions/grib2/template.5.200.def
 ```shellsession
 % # check the result of template 5.200 processing
 % TNOWC_PATH=Z__C_RJTD_20160822020000_NOWC_GPV_Ggis10km_Pphw10_FH0000-0100_grib2.bin
-% ./install/bin/grib_dump -O -w 1 ${TNOWC_PATH}
+% ./install/bin/grib_dump -O -w count=1 ${TNOWC_PATH}
 ***** FILE: Z__C_RJTD_20160822020000_NOWC_GPV_Ggis10km_Pphw10_FH0000-0100_grib2.bin
 #==============   MESSAGE 1 ( length=1567 )                ==============
 1-4       identifier = GRIB
