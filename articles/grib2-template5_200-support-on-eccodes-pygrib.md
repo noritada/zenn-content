@@ -22,23 +22,23 @@ GRIBデータは `b"GRIB"` で始まり `b"7777"` で終わるメッセージか
 
 各メッセージは次のような構造となっています。
 
-- **Section 0 (Indicator Section)**
+- **Section 0 (Indicator Section, 指示節)**
   `b"GRIB"`、GRIBバージョン、メッセージサイズなど。
-- **Section 1 (Identification Section)**
+- **Section 1 (Identification Section, 識別節)**
   発行機関、参照時刻などのデータソースに関する情報。
-- **Section 2 (Local Use Section)**
+- **Section 2 (Local Use Section, 地域使用節)**
   各地域の機関で定義した情報。
-- **Section 3 (Grid Definition Section)**
+- **Section 3 (Grid Definition Section, 格子系定義節)**
   格子系の定義。格子系の種類（正距円筒図法やランベルト正角円錐図法など）と、それぞれの格子系を具体的に定義するパラメータ群（四隅の経緯度、緯度方向や経度方向の格子点数など）。種類ごとにTemplateが存在。
-- **Section 4 (Product Definition Section)**
+- **Section 4 (Product Definition Section, プロダクト定義節)**
   含まれる値の意味に関する定義。例えば前述の気象要素、高度レベル、予報時間など。さまざまなパターンを網羅できるよう、Templateが存在。気象要素についてはテーブルでコードが（単位と一緒に）定義されており、そのコードで表現される。
-- **Section 5 (Data Representaion Section)**
+- **Section 5 (Data Representaion Section, 資料表現節)**
   格子点値をどのような表現として含むかに関する定義。簡単に言えば、圧縮方法や、その方法での圧縮に使われるパラメータ群の値の定義。必要となるパラメータ群は圧縮方法ごとに異なるので、圧縮方法ごとのTemplateが存在。
-- **Section 6 (Bit-map Section)**
+- **Section 6 (Bit-map Section, ビットマップ節)**
   配列中の一連の欠損値を表すビットマップ。各格子点値が欠損値であるかどうかの情報を格子点値の配列から切り離してこのセクションに格納し、欠損値以外の格子点値のみをSection 5で定義した方法で圧縮してSection 7に格納する、という使い方をする。
-- **Section 7 (Data Section)**
+- **Section 7 (Data Section, 資料節)**
   Section 5で定義した方法で圧縮されたデータ本体。一部のパラメータはSection 5に含まれず、こちらに含まれる。基本的にSection 5のTemplateに一対一で対応するTemplateが存在する。
-- **Section 8 (End Section)**
+- **Section 8 (End Section, 終端節)**
   `b"7777"`。
 
 この説明を読むとわかるとおり、GRIBには気象要素や高度レベルの情報も含まれており、単に一連の格子点値や経緯度の値をシリアライズしたものではない、という点が業界フォーマットらしい特徴です。また、さまざまな格子系、さまざまな気象要素や高度レベルや予報時間、さまざまな圧縮方法が利用可能で、そのため汎用のデータ処理系はそれらに対応する必要があります（特定のGRIB2を読めればよい処理系を作るだけならそこまで難しくありません）^[さまざまな国の気象機関から公開されているデータもあればクローズドなデータもあり、Templateやパラメータによって、使用しているデータを見つけやすい（動作確認しやすい）ものもあれば、あまり使われておらず見つけにくい（動作確認しにくい）ものもある、という点も、汎用の処理系を作る上での難しさです。]。
