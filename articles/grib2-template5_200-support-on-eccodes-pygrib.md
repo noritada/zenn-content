@@ -236,7 +236,7 @@ install/share/eccodes/definitions/grib2/template.5.200.def
 1-4       7777 = 7777
 ```
 
-注目すべきは、Section 5の内容です。`dataRepresentationTemplateNumber = 200` の下に、Templateに含まれる各種パラメータの値がきちんと表示されており、[仕様に関する気象庁資料](https://www.data.jma.go.jp/suishin/cgi-bin/catalogue/make_product_page.cgi?id=Nowcast)と整合的なので、きちんと読めていることがわかります。
+注目すべきは、Section 5の内容です。`dataRepresentationTemplateNumber = 200` の下に、Templateに含まれる各種パラメータの値がきちんと表示されており、[仕様に関する気象庁資料](https://www.data.jma.go.jp/suishin/cgi-bin/catalogue/make_product_page.cgi?id=Nowcast)と整合的なので、きちんと読めていることがわかります。`Unknown code table entry (grib2/tables/5/5.0.table)` と、`Unknown` となっているのが気になった方は、[おまけ](#おまけ：grib2のバージョンとコード)を参照してください。
 
 ```
 10-11     dataRepresentationTemplateNumber = 200 [Unknown code table entry (grib2/tables/5/5.0.table) ]
@@ -660,6 +660,30 @@ masked_array(
 ```
 
 無事にデータにアクセスでき、このGPVに含まれる降水強度の格子点値のうち、最も強いのは 51.5 mm/h（1格子点）、次が50.5 mm/h（2格子点）であることがわかりました^[なお、51.5 mm/hや50.5 mm/hのような中途半端な値になっているのは、代表値という特性によるものです。前述の技術情報第162号のレベル値の表を見るとわかるはずですが、「51.5 mm/h」は「51.0 mm/h以上52.0 mm/h未満」の意味であり、「50.5 mm/h」は「50.0 mm/h以上51.0 mm/h未満」の意味です。]。また、欠損値の格子点が 6,248,434 個あることもわかります。
+
+# おまけ：GRIB2のバージョンとコード
+
+本記事冒頭の GRIB2 の Section 4 の説明のところで、以下のように記載しました。
+
+> 含まれる値の意味に関する定義。例えば前述の気象要素、高度レベル、予報時間など。さまざまなパターンを網羅できるよう、Templateが存在。気象要素についてはテーブルでコードが（単位と一緒に）定義されており、そのコードで表現される。
+
+実はこういったコードはあらゆる Section で使われており、使える「コード」をまとめた表である Code Table が大量に存在します。そして、それらの Code Table は半年に一度のペースでアップデートされ、GRIB2 のバージョンとして管理されています。
+
+本文で用いた竜巻発生確度ナウキャスト GPV の場合、ダンプの結果を見ると、基づいている GRIB2 のバージョンは 5 でした。
+
+```
+10        tablesVersion = 5 [Version implemented on 4 November 2009 (grib2/tables/1.0.table) ]
+```
+
+しかし、Section 5 のテンプレートの意味が記載されている Code Table 5.0 には、GRIB2 のバージョン 5 の時点では、実は、Template 5.200 に相当する 200 番のエントリがまだ存在しません。Code Table 5.0 に 200 番のエントリが入るのは、GRIB2 のバージョン 8 からになります。
+
+ecCodes の場合、定義ファイルとして各バージョンの Code Table もインストールされるため、以下のように、GRIB2 バージョン 7 までの Code Table 5.0 には 200 番が存在せず、GRIB2 バージョン 8 の Code Table 5.0 には 200 番が存在することを確認できます。
+
+https://github.com/ecmwf/eccodes/blob/83821a501b06ae849bf120ab6eaf1f904c24c84f/definitions/grib2/tables/7/5.0.table
+
+https://github.com/ecmwf/eccodes/blob/83821a501b06ae849bf120ab6eaf1f904c24c84f/definitions/grib2/tables/8/5.0.table
+
+したがって、「使用しているコードがまだ GRIB2 の Code Table に登録されていなかった」というのが、竜巻発生確度ナウキャスト GPV のダンプ結果において、`Unknown code table entry (grib2/tables/5/5.0.table)` となっていた理由です。
 
 # おまけ：レベル値0に対応する代表値が欠損値ではなく0となっていた問題
 
