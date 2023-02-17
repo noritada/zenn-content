@@ -99,7 +99,7 @@ ecCodes はシステムにもインストールされているので、それと
 % # just show a commit hash of the current HEAD, which will be used to build
 % ECCODES_SRC_DIR=~/ghq/github.com/ecmwf/eccodes
 % (cd ${ECCODES_SRC_DIR} && git rev-parse --short HEAD)
-f677e67b8
+83821a501
 
 % # build and install eccodes from HEAD of the development repository
 % mkdir build install
@@ -217,19 +217,19 @@ install/share/eccodes/definitions/grib2/template.5.200.def
 1-4       section7Length = 1391
 5         numberOfSection = 7
 6-1391    codedValues = (86016,1386) {
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00,
-0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00, 0.0000000000e+00
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03,
+9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03, 9.9990000000e+03
 ... 85916 more values
 } # data_run_length_packing codedValues
 ======================   SECTION_8 ( length=4, padding=0 )     ======================
@@ -338,16 +338,18 @@ ECCODES ERROR   :  grib_handle_new_from_message: No final 7777 in message!
 
 もっと詳しく、`grib_dump` と同様のコマンドラインツールである `grib_get_data` で、各格子点値を対応する経緯度と併せて表示してみます。比較のため、筆者がRustで開発している [grib-rs](https://github.com/noritada/grib-rs) というGRIBパーサライブラリの gribber というコマンドラインツールの出力と比べてみます。
 
+なお、`grib_get_data` はデフォルトでは欠損値を飛ばして表示するため、`-m nan` で、欠損値を `nan` として表示するようにしています。
+
 まずは先頭4点のデータです。
 
 ```shellsession
 % # compare values of data decoded from the first submessage using eccodes with those of data decoded using gribber from grib-rs, which I am developing, and wgrib2
-% ./install/bin/grib_get_data -w count=1 ${TNOWC_PATH} | head -5
+% ./install/bin/grib_get_data -w count=1 -m nan ${TNOWC_PATH} | head -5
 Latitude Longitude Value
-   47.958  118.062 0.0000000000e+00
-   47.958  118.188 0.0000000000e+00
-   47.958  118.312 0.0000000000e+00
-   47.958  118.438 0.0000000000e+00
+   47.958  118.062 nan
+   47.958  118.188 nan
+   47.958  118.312 nan
+   47.958  118.438 nan
 % gribber decode ${TNOWC_PATH} 0.0 | head -5
  Latitude Longitude     Value
 47.958332 118.06249       NaN
@@ -366,8 +368,8 @@ Latitude Longitude Value
 
 ```shellsession
 % # compare value counts of data decoded from the first submessage using eccodes with those of data decoded using gribber
-% ./install/bin/grib_get_data -w count=1 ${TNOWC_PATH} | awk '{print $3;}' | sort | uniq -c | sort -nr
-71493 0.0000000000e+00
+% ./install/bin/grib_get_data -w count=1 -m nan ${TNOWC_PATH} | awk '{print $3;}' | sort | uniq -c | sort -nr
+71493 nan
 14383 1.0000000000e+00
   76 3.0000000000e+00
   64 2.0000000000e+00
@@ -380,13 +382,9 @@ Latitude Longitude Value
    1 Value
 ```
 
-基本的に同じデコード結果になっていそうですが、気になる点があるとすると、gribber やwgrib2で `NaN`（wgrib2ではNaNの代わりに `9.999e+20` という数値になっています）となっている値が `0.0` という値になっているようです。
+基本的に同じデコード結果になっていそうです。
 
-Template 5.200では、もともとのデータ（データ代表値）がレベル値に変換され、その代表値とレベル値のマッピングがSection 5に埋め込まれます。竜巻発生確度ナウキャストでは、レベル値 `1` = 代表値 `1`、レベル値 `2` = 代表値 `2`、レベル値 `3` = 代表値 `3` という単純なマッピングになっています^[マッピングについては、[「Template 5.200/7.200サポートの簡単な確認」](#template-5.200%2F7.200サポートの簡単な確認)で出力したTemplate 5.200のダンプ表示を見れば、埋め込まれているのがわかるでしょう。]。このとき、レベル値 `0` に対応する代表値は定義されていないため、欠損値（`NaN`）として表現するのが適切ではないかと筆者は考えますが、ecCodes の現時点での実装では、以下のPRで意図的に `0` にされています。といっても、この変更を手元でrevertしてみた限り、revertするだけでは解決にならない気がするので、もう少し調査やコミュニケーションをしてみようと思います。
-
-https://github.com/ecmwf/eccodes/pull/73
-
-`0` となっていても竜巻発生確度ナウキャストGPVの場合は問題ありませんが、全国合成レーダーGPVなどで「降水強度 0 mm/h」と「欠損値」を区別したい場合は注意が必要そうです^[全国合成レーダーGPVの場合は、[仕様 (PDF)](https://www.data.jma.go.jp/suishin/jyouhou/pdf/162.pdf) を見るとわかるように、レベル値 `1` = 代表値 `0` というマッピングになっています。]。
+（本記事を最初に書いた段階では、欠損値がすべて `0` という値になってしまう問題がありましたが、修正されました。問題の原因であるレベル値 `0` という概念も含め、[おまけ](#おまけ：レベル値0に対応する代表値が欠損値ではなく0となっていた問題)として記載しました。）
 
 ## レイヤー一覧の確認
 
@@ -397,27 +395,21 @@ https://github.com/ecmwf/eccodes/pull/73
 % ./install/bin/grib_ls ${TNOWC_PATH}
 Z__C_RJTD_20160822020000_NOWC_GPV_Ggis10km_Pphw10_FH0000-0100_grib2.bin
 edition      centre       date         dataType     gridType     stepRange    typeOfLevel  level        shortName    packingType
-2            rjtd         20160822     af           regular_ll   0            surface      0            unknown      unknown
-2            rjtd         20160822     af           regular_ll   10           surface      0            unknown      unknown
-2            rjtd         20160822     af           regular_ll   20           surface      0            unknown      unknown
-2            rjtd         20160822     af           regular_ll   30           surface      0            unknown      unknown
-2            rjtd         20160822     af           regular_ll   40           surface      0            unknown      unknown
-2            rjtd         20160822     af           regular_ll   50           surface      0            unknown      unknown
-2            rjtd         20160822     af           regular_ll   1            surface      0            unknown      unknown
+2            rjtd         20160822     af           regular_ll   0            surface      0            unknown      grid_run_length
+2            rjtd         20160822     af           regular_ll   10           surface      0            unknown      grid_run_length
+2            rjtd         20160822     af           regular_ll   20           surface      0            unknown      grid_run_length
+2            rjtd         20160822     af           regular_ll   30           surface      0            unknown      grid_run_length
+2            rjtd         20160822     af           regular_ll   40           surface      0            unknown      grid_run_length
+2            rjtd         20160822     af           regular_ll   50           surface      0            unknown      grid_run_length
+2            rjtd         20160822     af           regular_ll   1            surface      0            unknown      grid_run_length
 7 of 7 messages in Z__C_RJTD_20160822020000_NOWC_GPV_Ggis10km_Pphw10_FH0000-0100_grib2.bin
 
 7 of 7 total messages in 1 files
 ```
 
-まだ未完成という意味なのか、単なる変更漏れか、`packingType` が `unknown` となってしまっています。これは、次のように `install/share/eccodes/definitions/grib2/section.5.def` に Template 5.200 の記載がないのが原因なので、ここに `dataRepresentationTemplateNumber = 200;` のエントリを加えてあげれば簡単に解決できます。
+圧縮方法を表す `packingType` が `grid_run_length` となっており、Template 5.200、7.200 (run length packing with level values packing) であることがわかります。
 
-https://github.com/ecmwf/eccodes/blob/0e6d6a138fb6ed1ea375363d8a6dfe32b87222ce/definitions/grib2/section.5.def#L22-L51
-
-（上記はリポジトリのコードですが、対応するコードが `install/share/eccodes/definitions/grib2/section.5.def` にもあるはずです。）
-
-命名規則がよくわからないのですが、ひとまずPRを送っておきました。
-
-https://github.com/ecmwf/eccodes/pull/74
+（本記事を最初に書いた段階では、`unknown` になっていましたが、修正されました。[おまけ](#おまけ：packingtypeがunknownとなっていた問題)として記載しました。）
 
 # pygrib でデータを読む
 
@@ -482,13 +474,22 @@ ecCodesの場合と同様、pygribについても今回の作業専用のディ�
        [118.0625, 118.1875, 118.3125, ..., 149.6875, 149.8125, 149.9375],
        [118.0625, 118.1875, 118.3125, ..., 149.6875, 149.8125, 149.9375]]))
 >>> message.values
-array([[0., 0., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 0., 0.],
-       ...,
-       [0., 0., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 0., 0.]])
+masked_array(
+  data=[[--, --, --, ..., --, --, --],
+        [--, --, --, ..., --, --, --],
+        [--, --, --, ..., --, --, --],
+        ...,
+        [--, --, --, ..., --, --, --],
+        [--, --, --, ..., --, --, --],
+        [--, --, --, ..., --, --, --]],
+  mask=[[ True,  True,  True, ...,  True,  True,  True],
+        [ True,  True,  True, ...,  True,  True,  True],
+        [ True,  True,  True, ...,  True,  True,  True],
+        ...,
+        [ True,  True,  True, ...,  True,  True,  True],
+        [ True,  True,  True, ...,  True,  True,  True],
+        [ True,  True,  True, ...,  True,  True,  True]],
+  fill_value=9999.0)
 ```
 
 問題なくNumPy配列として読めています。
@@ -603,26 +604,48 @@ include "grib2/template.4.8.def"
         149.99375]]))
 >>> values = message.values
 >>> values
-array([[0., 0., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 0., 0.],
-       ...,
-       [0., 0., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 0., 0.]])
+masked_array(
+  data=[[--, --, --, ..., --, --, --],
+        [--, --, --, ..., --, --, --],
+        [--, --, --, ..., --, --, --],
+        ...,
+        [--, --, --, ..., --, --, --],
+        [--, --, --, ..., --, --, --],
+        [--, --, --, ..., --, --, --]],
+  mask=[[ True,  True,  True, ...,  True,  True,  True],
+        [ True,  True,  True, ...,  True,  True,  True],
+        [ True,  True,  True, ...,  True,  True,  True],
+        ...,
+        [ True,  True,  True, ...,  True,  True,  True],
+        [ True,  True,  True, ...,  True,  True,  True],
+        [ True,  True,  True, ...,  True,  True,  True]],
+  fill_value=9999.0)
 >>> import numpy as np
 >>> np.nanmax(values)
 51.5
 >>> np.unique(values, return_counts=True)
-(array([ 0.  ,  0.1 ,  0.25,  0.35,  0.45,  0.55,  0.65,  0.75,  0.85,
-        0.95,  1.05,  1.15,  1.25,  1.35,  1.45,  1.55,  1.65,  1.75,
-        1.85,  1.95,  2.13,  2.38,  2.63,  2.88,  3.13,  3.38,  3.63,
-        3.88,  4.13,  4.38,  4.63,  4.88,  5.25,  5.75,  6.25,  6.75,
-        7.25,  7.75,  8.25,  8.75,  9.25,  9.75, 10.5 , 11.5 , 12.5 ,
-       13.5 , 14.5 , 15.5 , 16.5 , 17.5 , 18.5 , 19.5 , 20.5 , 21.5 ,
-       22.5 , 23.5 , 24.5 , 25.5 , 26.5 , 28.5 , 29.5 , 30.5 , 31.5 ,
-       32.5 , 33.5 , 34.5 , 36.5 , 37.5 , 38.5 , 39.5 , 40.5 , 41.5 ,
-       42.5 , 43.5 , 46.5 , 48.5 , 50.5 , 51.5 ]), array([8540653,    2130,    3075,    2950,    3160,    3501,    3179,
+(masked_array(data=[0.0, 0.1, 0.25, 0.35000000000000003, 0.45, 0.55, 0.65,
+                   0.75, 0.85, 0.9500000000000001, 1.05,
+                   1.1500000000000001, 1.25, 1.35, 1.45, 1.55,
+                   1.6500000000000001, 1.75, 1.85, 1.95, 2.13, 2.38, 2.63,
+                   2.88, 3.13, 3.38, 3.63, 3.88, 4.13, 4.38, 4.63, 4.88,
+                   5.25, 5.75, 6.25, 6.75, 7.25, 7.75, 8.25, 8.75, 9.25,
+                   9.75, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5, 16.5, 17.5,
+                   18.5, 19.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5,
+                   28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 36.5, 37.5,
+                   38.5, 39.5, 40.5, 41.5, 42.5, 43.5, 46.5, 48.5, 50.5,
+                   51.5, --],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False,  True],
+       fill_value=9999.0), array([2292219,    2130,    3075,    2950,    3160,    3501,    3179,
           4292,    4106,    3112,    2888,    2718,    2027,    2036,
           2051,    1441,    1398,    1530,    1125,    1023,    1985,
           1942,    1499,    1174,     827,     876,     654,     586,
@@ -633,10 +656,40 @@ array([[0., 0., 0., ..., 0., 0., 0.],
             14,       2,       8,       9,       6,       5,       3,
              4,       1,       5,       4,       1,       1,       1,
              1,       1,       1,       2,       1,       1,       2,
-             1]))
+             1, 6248434]))
 ```
 
-無事にデータにアクセスでき、このGPVに含まれる降水強度の格子点値のうち、最も強いのは 51.5 mm/h（1格子点）、次が50.5 mm/h（2格子点）であることがわかりました^[なお、51.5 mm/hや50.5 mm/hのような中途半端な値になっているのは、代表値という特性によるものです。前述の技術情報第162号のレベル値の表を見るとわかるはずですが、「51.5 mm/h」は「51.0 mm/h以上52.0 mm/h未満」の意味であり、「50.5 mm/h」は「50.0 mm/h以上51.0 mm/h未満」の意味です。]。
+無事にデータにアクセスでき、このGPVに含まれる降水強度の格子点値のうち、最も強いのは 51.5 mm/h（1格子点）、次が50.5 mm/h（2格子点）であることがわかりました^[なお、51.5 mm/hや50.5 mm/hのような中途半端な値になっているのは、代表値という特性によるものです。前述の技術情報第162号のレベル値の表を見るとわかるはずですが、「51.5 mm/h」は「51.0 mm/h以上52.0 mm/h未満」の意味であり、「50.5 mm/h」は「50.0 mm/h以上51.0 mm/h未満」の意味です。]。また、欠損値の格子点が 6,248,434 個あることもわかります。
+
+# おまけ：レベル値0に対応する代表値が欠損値ではなく0となっていた問題
+
+本記事を書くにあたって試した最初のバージョン（ecCodes のリビジョン `f677e67b8`）では、`grib_get_data` の出力において、欠損値が `nan` ではなく `0.0000000000e+00` すなわち `0` として表示されてしまう問題がありました。
+
+Template 5.200 では、もともとのデータ（データ代表値）がレベル値に変換され、その代表値とレベル値のマッピングが Section 5 に埋め込まれます。竜巻発生確度ナウキャストでは、レベル値 `1` = 代表値 `1`、レベル値 `2` = 代表値 `2`、レベル値 `3` = 代表値 `3` という単純なマッピングになっています^[マッピングについては、[「Template 5.200/7.200 サポートの簡単な確認」](#template-5.200%2F7.200サポートの簡単な確認)で出力した Template 5.200 のダンプ表示を見れば、埋め込まれているのがわかるでしょう。]。このとき、レベル値 `0` に対応する代表値は定義されていないため、欠損値（`NaN`）として表現するのが適切なのですが、当初の実装では、以下の PR で意図的に `0` にされていました。
+
+https://github.com/ecmwf/eccodes/pull/73
+
+これは、筆者が問題を報告するとともに、サンプルとなる JMA の GRIB2 データを先方に共有したところ、修正していただけました。
+
+https://github.com/ecmwf/eccodes/commit/e85de787cea0284c1c344b4fac94e5b07bc004a6
+
+https://github.com/ecmwf/eccodes/commit/83821a501b06ae849bf120ab6eaf1f904c24c84f
+
+なお、`0` となっていても竜巻発生確度ナウキャスト GPV の場合は区別できるので問題ありませんが、全国合成レーダー GPV などでは問題が発生します。全国合成レーダー GPV の場合は、[仕様 (PDF)](https://www.data.jma.go.jp/suishin/jyouhou/pdf/162.pdf) を見るとわかるように、レベル値 `0` = 欠損値、レベル値 `1` = 代表値 `0`（降水強度 0 mm/h）というマッピングになっています。
+
+# おまけ：packingTypeがunknownとなっていた問題
+
+本記事を書くにあたって試した最初のバージョン（ecCodes のリビジョン `f677e67b8`）では、`grib_ls` の出力において、`packingType` が `unknown` となっていました。これは、次のように `install/share/eccodes/definitions/grib2/section.5.def` に Template 5.200 の記載がないのが原因なので、ここに `dataRepresentationTemplateNumber = 200;` のエントリを加えてあげれば、ユーザ側で簡単に解決できます。
+
+https://github.com/ecmwf/eccodes/blob/0e6d6a138fb6ed1ea375363d8a6dfe32b87222ce/definitions/grib2/section.5.def#L22-L51
+
+（上記はリポジトリのコードですが、対応するコードが `install/share/eccodes/definitions/grib2/section.5.def` にもあるはずです。）
+
+私のほうで PR を送り、（マージされずにcloseされたかたちとなっていますが）マージされたようです。
+
+https://github.com/ecmwf/eccodes/pull/74
+
+https://github.com/ecmwf/eccodes/commit/a1d55b5b5c590248f8a580e61fa39f01e81b041b
 
 # おまけ：pygribをインストールして実行するとシステムのecCodesを参照してしまう問題
 
