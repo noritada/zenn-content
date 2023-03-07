@@ -1,2 +1,12 @@
-node_modules
+# temporary and backup files created by editors
+*\#*\#
+*~
+*.bak
+*.swp
+.vscode/
+
+# OS-generated files
 .DS_Store
+Thumbs.db
+
+node_modules
